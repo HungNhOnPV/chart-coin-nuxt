@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div style="margin-top: 200px">
+    <div style="margin-top: 50px">
       <Chart />
     </div>
   </section>
