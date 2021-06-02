@@ -54,7 +54,7 @@ export default {
               text: "1d",
               events: {
                 click: function () {
-                  _this.timeLine = "minute";
+                  // _this.timeLine = "minute";
                   _this.getApiHolder();
                 },
               },
@@ -65,7 +65,7 @@ export default {
               text: "7d",
               events: {
                 click: function () {
-                  _this.timeLine = "hour";
+                  // _this.timeLine = "hour";
                   _this.getApiHolder();
                 },
               },
@@ -76,7 +76,7 @@ export default {
               text: "1m",
               events: {
                 click: function () {
-                  _this.timeLine = "hour";
+                  // _this.timeLine = "hour";
                   _this.getApiHolder();
                 },
               },
@@ -87,7 +87,7 @@ export default {
               text: "6m",
               events: {
                 click: function () {
-                  _this.timeLine = "day";
+                  // _this.timeLine = "day";
                   _this.getApiHolder();
                 },
               },
@@ -98,7 +98,7 @@ export default {
               text: "1y",
               events: {
                 click: function () {
-                  _this.timeLine = "";
+                  // _this.timeLine = "week";
                   _this.getApiHolder();
                 },
               },
@@ -109,7 +109,7 @@ export default {
               title: "YTD",
               events: {
                 click: function () {
-                  _this.timeLine = "week";
+                  // _this.timeLine = "week";
                   _this.getApiHolder();
                 },
               },
@@ -119,7 +119,7 @@ export default {
               text: "All",
               events: {
                 click: function () {
-                  _this.timeLine = "week";
+                  // _this.timeLine = "week";
                   _this.getApiHolder();
                 },
               },
