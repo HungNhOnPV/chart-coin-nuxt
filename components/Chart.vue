@@ -188,7 +188,7 @@ export default {
     // },
     getApiHolder: function () {
       this.getHolder({
-        contractAddress: "0xb5e1f0264e249a593019f3893bd2272fb79bab05",
+        contractAddress: "0xc748673057861a797275cd8a068abb95a902e8de",
         timeLine: this.timeLine,
       })
         .then((res) => {
