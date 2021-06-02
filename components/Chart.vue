@@ -43,7 +43,7 @@ export default {
               text: "1h",
               events: {
                 click: function () {
-                  _this.timeLine = "day";
+                  _this.timeLine = "";
                   _this.getApiHolder();
                 },
               },
