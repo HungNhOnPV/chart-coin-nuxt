@@ -98,7 +98,7 @@ export default {
               text: "1y",
               events: {
                 click: function () {
-                  _this.timeLine = "week";
+                  _this.timeLine = "";
                   _this.getApiHolder();
                 },
               },
