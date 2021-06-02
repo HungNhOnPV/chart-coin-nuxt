@@ -38,6 +38,17 @@ export default {
         rangeSelector: {
           buttons: [
             {
+              type: "hour",
+              count: 1,
+              text: "1h",
+              events: {
+                click: function () {
+                  _this.timeLine = "day";
+                  _this.getApiHolder();
+                },
+              },
+            },
+            {
               type: "day",
               count: 1,
               text: "1d",
