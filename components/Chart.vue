@@ -201,6 +201,9 @@ export default {
   },
   created() {
     this.getApiHolder();
+    setInterval(() => {
+      this.getApiHolder();
+    }, 30000);
   },
 };
 </script>
