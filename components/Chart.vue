@@ -1,21 +1,5 @@
 <template>
   <div style="position: relative">
-    <!-- <div class="rangeSelector">
-      <button
-        @click="handleFilter('day')"
-        :class="{ active: timeLine === '1d' }"
-      >
-        1d
-      </button>
-      <button @click="handleFilter('')">7d</button>
-      <button @click="handleFilter('')">1m</button>
-      <button @click="handleFilter('')">6m</button>
-      <button @click="handleFilter('')">1y</button>
-      <button @click="handleFilter('')">YTD</button>
-      <button @click="handleFilter('')" :class="{ active: timeLine === '' }">
-        All
-      </button>
-    </div> -->
     <highcharts
       :constructor-type="'stockChart'"
       :options="chartOptions"
@@ -210,7 +194,7 @@ export default {
     // },
     getApiHolder: function () {
       this.getHolder({
-        contractAddress: "0x42069c0cf4da25420fc4c9d9001ba5af7846ccfd",
+        contractAddress: this.$route.query.contractAddress,
         timeLine: this.timeLine,
       })
         .then((res) => {

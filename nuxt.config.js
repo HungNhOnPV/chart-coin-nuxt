@@ -27,6 +27,10 @@ export default {
     {
       src: "~/plugins/highcharts.js",
       ssr: true
+    },
+    {
+      src: "~/plugins/vue-material.js",
+      ssr: true
     }
   ],
 
