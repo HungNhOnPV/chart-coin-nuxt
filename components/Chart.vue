@@ -49,6 +49,17 @@ export default {
               },
             },
             {
+              type: "hour",
+              count: 4,
+              text: "4h",
+              events: {
+                click: function () {
+                  // _this.timeLine = "";
+                  _this.getApiHolder();
+                },
+              },
+            },
+            {
               type: "day",
               count: 1,
               text: "1d",
