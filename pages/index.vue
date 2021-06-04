@@ -7,20 +7,22 @@
         @md-changed="getCountries"
         @md-opened="getCountries"
       >
-        <label>Enter token address...</label>
+        <label>Enter token name/address...</label>
 
         <template
           slot="md-autocomplete-item"
           slot-scope="{ item }"
           style="width: 800px"
-          >{{ item }}</template
+          ><div @click="handleAddFavorite(item.address)">
+            {{ item.name }} : {{ item.address }}
+          </div></template
         >
       </md-autocomplete>
       <md-button
-        @click="handleAddFavorite()"
+        @click="$router.push({ name: 'favorite' })"
         class="md-raised md-primary mt-3 ml-3"
         style="width: 200px"
-        >Add Favorite</md-button
+        >Show Favorite</md-button
       >
     </form>
   </section>
@@ -48,10 +50,10 @@ export default {
           })
             .then((res) => {
               const listContractAddress = [];
-              res.data.data.forEach((item) => {
-                return listContractAddress.push(item.contractAddress);
+              res.data.forEach((item) => {
+                return listContractAddress.push(item.address);
               });
-              resolve(listContractAddress);
+              resolve(res.data);
             })
             .catch((err) => {
               reject(err);
@@ -59,17 +61,27 @@ export default {
         }, 500);
       });
     },
-    handleAddFavorite: function () {
+    handleAddFavorite: function (address) {
       this.createContractAddress({
-        contractAddress: this.value,
+        contractAddress: address,
         local: this.local,
       })
         .then(() => {
-          this.$router.push({ name: "favorite" });
+          this.$router.push({
+            name: "chart",
+            query: { contractAddress: address },
+          });
         })
         .catch((err) => {
           alert(err);
         });
+    },
+  },
+  watch: {
+    value: function () {
+      if (this.value !== "") {
+        this.disabled = false;
+      } else this.disabled = true;
     },
   },
 };

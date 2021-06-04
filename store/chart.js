@@ -14,7 +14,7 @@ export const actions = {
     return axios.get(`${process.env.NUXT_ENV_API}/api/v1/coin/getHolders?contractAddress=${contractAddress}&timeLine=${timeLine}`)
   },
   getContractAddress: ({ commit }, { contractAddress }) => {
-    return axios.get(`${process.env.NUXT_ENV_API}/api/v1/coin/getContractAddress?contractAddress=${contractAddress}`)
+    return axios.get(`${process.env.NUXT_ENV_API_BSCSCSAN}/tokens?search=${contractAddress}`)
   },
   createContractAddress: ({ commit }, { contractAddress, local }) => {
     return axios.get(`${process.env.NUXT_ENV_API}/api/v1/coin/createContractAddress?contractAddress=${contractAddress}&local=${local}`)

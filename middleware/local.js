@@ -8,6 +8,5 @@ export default function ({ store, redirect, app }) {
   const generateID = () => {
     return 'idLocal' + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4();
   }
-  console.log(isLocal)
   if (!isLocal) return Cookies.set("local", generateID())
 }

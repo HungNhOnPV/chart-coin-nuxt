@@ -1,5 +1,11 @@
 <template>
   <div style="position: relative">
+    <md-button
+      @click="$router.push({ name: 'favorite' })"
+      class="md-raised md-primary mb-3"
+      style="width: 200px"
+      >Show Favorite</md-button
+    >
     <highcharts
       :constructor-type="'stockChart'"
       :options="chartOptions"
@@ -211,23 +217,10 @@ export default {
       this.getApiHolder();
     }, 30000);
   },
+  destroyed() {
+
+  }
 };
 </script>
 <style scoped>
-/* .rangeSelector {
-  position: absolute;
-  z-index: 999;
-  top: 50px;
-  left: 20px;
-}
-
-button {
-  border: none;
-  font-size: 14px;
-}
-
-button.active {
-  font-weight: bold;
-  background: #e6ebf5;
-} */
 </style>
